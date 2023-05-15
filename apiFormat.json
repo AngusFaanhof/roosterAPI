@@ -1,0 +1,15 @@
+{
+	"2022-09-05": [
+		{
+			"description": "Object-Oriented and Functional Programming (HC)",
+			"courseCode": "XB_0019",
+			"start": "2022-09-05T11:00:00",
+			"end": "2022-09-05T12:45:00",
+			"duration": "1:45",
+			"type": "Hoorcollege",
+			"teachers": ["Ploeg, A.J. van der"],
+			"locations": ["WN-Q105(208/52T)"],
+			"online": true
+		}
+	]
+}

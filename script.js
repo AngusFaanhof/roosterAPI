@@ -55,10 +55,6 @@ async function getAPIData() {
 	await new Promise(r => setTimeout(r, 1000)); // wait for download to finish
 
 	browser.close();
-
-	return {
-
-	};
 }
 
 getAPIData();
