@@ -3,8 +3,8 @@ const loginDetails = require('./loginDetails.json');
 
 async function getAPIData() {
 	const browser = await puppeteer.launch({
-		// headless: false,
-		headless: "new",
+		headless: false,
+		// headless: "new",
 		args: ['--disable-web-security', '--disable-features=IsolateOrigins', ' --disable-site-isolation-trials'],
 	});
 
@@ -49,7 +49,14 @@ async function getAPIData() {
 		options => options.map(option => option).filter(option => option.textContent.includes('All year'))[0].click()
 	);
 
-	// press final download button
+	// select ";" as delimiter
+	await page.waitForSelector('.popupContent .GNKVYU1OR');
+	await page.$eval('.popupContent .GNKVYU1OR', popup => popup.click());
+
+	const options = await page.$$('.popupContent .GNKVYU1P3 li');
+	await options[1].click();
+
+	// // press final download button
 	await page.waitForSelector('.GNKVYU1HO');
 	await page.$eval('.GNKVYU1HO button', button => button.click());
 	await new Promise(r => setTimeout(r, 1000)); // wait for download to finish
