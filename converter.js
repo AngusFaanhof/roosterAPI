@@ -37,7 +37,9 @@ function csvToApi(csv) {
 	return apiOutput;
 }
 
-const data = csvToApi(csv);
+function updateOutputFile() {
+	const data = csvToApi(csv);
+	fs.writeFileSync('apiOutput.json', JSON.stringify(data));
+}
 
-// write to json
-// fs.writeFileSync('apiOutput.json', JSON.stringify(data));
+module.exports = updateOutputFile;
