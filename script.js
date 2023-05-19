@@ -64,6 +64,11 @@ async function getAPIData() {
 	await new Promise(r => setTimeout(r, 1000)).then(value => {
 		browser.close();
 	}); // wait for download to finish
+
+	const today = new Date();
+	const fileName = `downloads/timetable_${today.toISOString().split('T')[0]}.csv`;
+
+	return fileName;
 }
 
 module.exports = getAPIData;

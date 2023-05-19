@@ -1,8 +1,6 @@
 // require fs
 const fs = require('fs');
 
-const csv = fs.readFileSync('downloads/timetable_2023-05-16.csv', 'utf8').split('"').join("");
-
 function csvToApi(csv) {
 	const lines = csv.split('\n');
 	const apiOutput = {};
@@ -37,7 +35,8 @@ function csvToApi(csv) {
 	return apiOutput;
 }
 
-function updateOutputFile() {
+function updateOutputFile(csvFileName) {
+	const csv = fs.readFileSync(csvFileName, 'utf8').split('"').join("");
 	const data = csvToApi(csv);
 	fs.writeFileSync('apiOutput.json', JSON.stringify(data));
 }

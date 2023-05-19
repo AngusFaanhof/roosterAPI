@@ -34,11 +34,10 @@ app.get('/range/:startDate/:days', function (req, res) {
 });
 
 app.get('/update', async function (req, res) {
-	getAPIData();
-	updateOutputFile();
+	const fileName = await getAPIData();
+	updateOutputFile(fileName);
 
 	res.json({success: true});
-
 });
 
 // TODO: Implement
