@@ -1,8 +1,8 @@
 vu rooster scraper
 
 Setup
-- `npm install puppeteer`
+- `npm install`
 - copy "loginDetailsTemplate.json" into "loginDetails.json" with your username and password
 
-Start
-- `node script.js`
+Start server
+- `node server.js`

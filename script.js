@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+
 const loginDetails = require('./loginDetails.json');
 
 async function getAPIData() {
