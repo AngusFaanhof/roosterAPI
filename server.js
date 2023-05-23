@@ -18,8 +18,8 @@ app.get('/day/:date', function (req, res) {
 });
 
 app.get('/range/:startDate/:days', function (req, res) {
-	let date = new Date(req.params.startDate);
-	const days = req.params.days;
+	let date = new Date(parseInt(req.params.startDate));
+	const days = parseInt(req.params.days);
 
 	var output = {};
 	for (let i = 0; i < days; i++) {
