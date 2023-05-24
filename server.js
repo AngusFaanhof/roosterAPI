@@ -12,14 +12,14 @@ app.get('/overview', function (req, res) {
 });
 
 app.get('/day/:timestamp', function (req, res) {
-	let date = new Date(parseInt(req.params.timestamp) * 1000);
+	let date = new Date(parseInt(req.params.timestamp));
 	date = date.toISOString().split('T')[0];
 
 	res.json(apiOutput[date]);
 });
 
 app.get('/range/:startTimestamp/:days', function (req, res) {
-	let date = new Date(parseInt(req.params.startTimestamp) * 1000);
+	let date = new Date(parseInt(req.params.startTimestamp));
 	const days = parseInt(req.params.days);
 
 	var output = {};
@@ -46,6 +46,6 @@ app.listen(3001, () => {
 	console.log("Server running on port http://localhost:3001");
 	console.log("Test routes:");
 	console.log("\thttp://localhost:3001/overview");
-	console.log("\thttp://localhost:3001/day/1684864270");
-	console.log("\thttp://localhost:3001/range/1684864270/7");
+	console.log("\thttp://localhost:3001/day/1684864270000");
+	console.log("\thttp://localhost:3001/range/1684864270000/7");
 });
