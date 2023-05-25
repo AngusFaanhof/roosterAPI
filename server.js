@@ -1,10 +1,13 @@
 const fs = require('fs');
 const express = require('express');
+const cors = require('cors');
 
 const getAPIData = require('./script');
 const updateOutputFile = require('./converter');
 
 const app = express();
+app.use(cors());
+
 let apiOutput = JSON.parse(fs.readFileSync('apiOutput.json', 'utf8'));
 
 app.get('/overview', function (req, res) {
