@@ -6,3 +6,6 @@ Setup
 
 Start server
 - `node server.js`
+
+# notes
+`timestamp` and `startTimestamp` must be provided with ms format
