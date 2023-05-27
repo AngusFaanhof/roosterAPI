@@ -5,7 +5,7 @@ const loginDetails = require('./loginDetails.json');
 async function getAPIData() {
 	const browser = await puppeteer.launch({
 		// headless: false,
-		headless: "new",
+		headless: 'new',
 		args: ['--disable-web-security', '--disable-features=IsolateOrigins', ' --disable-site-isolation-trials'],
 	});
 
@@ -25,9 +25,9 @@ async function getAPIData() {
 	await page.$eval('a[title="Log in"]', button => button.click());
 
 	// login
-	await page.waitForSelector('#userNameInput')
+	await page.waitForSelector('#userNameInput');
 	await page.type('#userNameInput', loginDetails.username);
-	await page.type("#passwordInput", loginDetails.password);
+	await page.type('#passwordInput', loginDetails.password);
 	await page.$eval('#submitButton', button => button.click());
 
 	// download schedule csv (no other indicators available)
@@ -62,7 +62,7 @@ async function getAPIData() {
 	await page.$eval('.GNKVYU1HO button', button => button.click());
 
 	// NOTE: Is this necessary?
-	await new Promise(r => setTimeout(r, 1000)).then(value => {
+	await new Promise(r => setTimeout(r, 1000)).then(() => {
 		browser.close();
 	}); // wait for download to finish
 

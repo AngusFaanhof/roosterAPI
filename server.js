@@ -46,9 +46,9 @@ app.get('/update', async function (req, res) {
 });
 
 app.listen(3001, () => {
-	console.log("Server running on port http://localhost:3001");
-	console.log("Test routes:");
-	console.log("\thttp://localhost:3001/overview");
-	console.log("\thttp://localhost:3001/day/1684864270000");
-	console.log("\thttp://localhost:3001/range/1684864270000/7");
+	console.log('Server running on port http://localhost:3001');
+	console.log('Test routes:');
+	console.log('\thttp://localhost:3001/overview');
+	console.log('\thttp://localhost:3001/day/1684864270000');
+	console.log('\thttp://localhost:3001/range/1684864270000/7');
 });
